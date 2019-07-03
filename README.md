@@ -1,5 +1,5 @@
-SimpleTranslate
-================
+Simple Translator
+===================
 Simple Translate Server with Google Translate API
 
 1. Download Directory
