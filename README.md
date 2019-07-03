@@ -2,15 +2,15 @@ SimpleTranslate
 ================
 Simple Translate Server with Google Translate API
 
-####1. Download Directory
+1. Download Directory
 <pre><code>go get github.com/Junhyeok99/SimpleTranslate</code></pre>
 Make sure you set *$GOPATH*
 
-####2. Download Dependancy
+2. Download Dependancy
 <pre><code>make</code></pre>
 This command will download Related Packages
 
-####3. Set your env
+3. Set your env
 Google API needs **json key** path in env variable
 
 Fix ```sample_env.sh``` with your Google API KEY (Go to the link below)
@@ -20,7 +20,7 @@ After change the value run below:
 
 <pre><code>source sample_env.sh</code></pre>
 
-####4. Run Program
+4. Run Program
 <pre><code>go run main.go -flags</code></pre>
 Description of flags are below
 
@@ -40,4 +40,4 @@ Description of flags are below
 >>String type:
 >>>Text which you want to Translate
 
-###Still in Develop!
+Still in Develop!
