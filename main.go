@@ -6,8 +6,10 @@ import (
 	"flag"
 	"fmt"
 	lang "golang.org/x/text/language"
+	"gopkg.in/gookit/color.v1"
 	"io/ioutil"
 	"log"
+	"strings"
 )
 
 func main() {
@@ -27,7 +29,6 @@ func main() {
 	if err != nil {
 		log.Fatalf("Invalid Language Code %s: %v", *language, err)
 	}
-	fmt.Printf("Current language: %s\n", *language)
 
 	if *isFile {
 		b, e := ioutil.ReadFile(*location)
@@ -39,21 +40,28 @@ func main() {
 	} else {
 		*location = "Command Line"
 	}
+	texts := strings.Split(*text, "\n")
 
-	fmt.Printf("From %s: %s\n", *location, *text)
+	color.New(color.FgCyan, color.OpBold).Printf("Text from %s:\n", *location)
+	var t []string
+	for i, _ := range texts {
+		fmt.Println(texts[i])
+		t = append(t, texts[i])
+	}
 
 	c := context.Background()
 	client, err := translate.NewClient(c)
 	if err != nil {
 		log.Fatalf("Failed to create client: %v", err)
 	}
-	var t []string
-	t = append(t, *text)
 	translations, err := client.Translate(c, t, tag, nil)
 	if err != nil {
 		log.Fatalf("Failed to Translate Text: %v", err)
 	}
-	fmt.Printf("Translated: %s\n", translations[0].Text)
+	color.New(color.FgCyan, color.OpBold).Printf("\nTranslated with language [%s]:\n", *language)
+	for i, _ := range translations {
+		fmt.Println(translations[i].Text)
+	}
 
 	return
 }

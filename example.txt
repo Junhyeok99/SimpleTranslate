@@ -1,1 +1,2 @@
 This is Simple Translate Server
+It's very fun

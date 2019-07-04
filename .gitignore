@@ -1,3 +1,4 @@
 .idea/
 *_KEY.json
 .DS_Store
+env.sh

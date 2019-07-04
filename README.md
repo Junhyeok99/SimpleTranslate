@@ -7,7 +7,7 @@ Simple Translate Server with Google Translate API
 Make sure you set *$GOPATH*
 
 2. Download Dependancy
-<pre><code>make</code></pre>
+<pre><code>cd $GOPATH/src/github.com/Junhyeok99/SimpleTranslate && make</code></pre>
 This command will download Related Packages
 
 3. Set your env
