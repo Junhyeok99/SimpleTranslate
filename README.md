@@ -35,6 +35,8 @@ Description of flags are below
 >3. -lang
 >>String type:
 >>>Destination language to Translate text (default "ko")
+>>>
+>>>https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes (639-1)
 
 >4. -t
 >>String type:
